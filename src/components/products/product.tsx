@@ -4,6 +4,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Skeleton } from "../ui/skeleton";
 import { useCartStore } from "@/stores/useCartStore";
 import { createNewProductToCart } from "@/utils";
+import { toast } from "sonner";
 
 type ProductProps = {
   product: ProductType;
@@ -14,6 +15,7 @@ export default function Product({ product }: ProductProps) {
 
   const handleClick = (product: ProductType) => {
     addProductToCart(createNewProductToCart(product));
+    toast("🚀 Producto añadido al carrito");
   };
 
   return (

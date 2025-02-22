@@ -15,3 +15,10 @@ export type Product = {
 export type CartProduct = Product & {
   quantity: number;
 };
+
+export type HistoryItem = {
+  id: string;
+  date: string;
+  products: CartProduct[];
+  totalAmount: number;
+}

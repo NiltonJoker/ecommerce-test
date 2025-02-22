@@ -1,7 +1,8 @@
-import { PowerIcon, ShoppingCart } from "lucide-react";
+import { PowerIcon } from "lucide-react";
 import { Link } from "react-router";
-import { Button } from "./ui/button";
 import Sidebar from "./sidebar";
+import ShoppingCart from "./cart/shopping-cart";
+import { APP_ROUTES } from "@/routes/routes";
 
 export default function Header() {
   return (
@@ -14,28 +15,21 @@ export default function Header() {
           </Link>
         </div>
         <nav className="hidden items-center gap-4 md:flex">
-          <Link
-            to="#"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground"
-          >
-            Home
-          </Link>
-          <Link
-            to="#"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground"
-          >
-            Historial
-          </Link>
+          {
+            APP_ROUTES.map(({ path, name }) => (
+              <Link
+                key={path}
+                to={path}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground"
+              >
+                {name}
+              </Link>
+            ))
+          }
         </nav>
 
         <div className="flex gap-1">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="rounded-full cursor-pointer"
-          >
-            <ShoppingCart className="h-6 w-6" />
-          </Button>
+          <ShoppingCart />
           <Sidebar />
         </div>
       </div>
