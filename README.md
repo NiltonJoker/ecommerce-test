@@ -34,7 +34,11 @@ Para ejecutar los tests automatizados, sigue los siguientes pasos:
   ``npm install``
   o
   ``yarn install``
-2. Ejecutar los tests con
+2. Ejecutar el proyecto con
+  ``npm run dev``
+  o
+  ``yarn dev``
+4. Ejecutar los tests con
   ``npm run test``
   o
   ``yarn test``
