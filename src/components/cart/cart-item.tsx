@@ -38,7 +38,7 @@ export default function CartItem({ item }: CartItemProps) {
             className="aspect-square object-contain rounded-lg overflow-hidden basis-[80px] shrink-0"
           />
           <div className="grid gap-1.5">
-            <h3 className="font-bold text-base leading-none">{item.title}</h3>
+            <h3 className="font-bold text-base leading-none" data-cart-item={item.id} >{item.title}</h3>
             <div className="font-bold">${item.price}</div>
             <div className="text-sm text-muted">Color: Blue</div>
           </div>
@@ -49,16 +49,18 @@ export default function CartItem({ item }: CartItemProps) {
               size="sm"
               variant="outline"
               className="rounded-full"
+              data-button-decrease={item.id}
               onClick={handleDecrease}
             >
               <MinusIcon className="w-3 h-3" />
               <span className="sr-only">Decrease</span>
             </Button>
-            <span className="font-bold">{item.quantity}</span>
+            <span className="font-bold" data-cart-item-quantity={item.id}>{item.quantity}</span>
             <Button
               size="sm"
               variant="outline"
               className="rounded-full"
+              data-button-increase={item.id}
               onClick={handleIncrease}
             >
               <PlusIcon className="w-3 h-3" />

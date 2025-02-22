@@ -20,8 +20,9 @@ export default function Product({ product }: ProductProps) {
 
   return (
     <div
-      key={product.id}
       className="flex flex-col justify-center items-center p-4 border-2 border-gray-300 rounded-md gap-4"
+      data-item="product"
+      data-product-id={product.id}
     >
       <LazyLoadImage
         alt={product.title}
@@ -37,7 +38,7 @@ export default function Product({ product }: ProductProps) {
       </h2>
       <p className="text-sm">{product.price} USD</p>
 
-      <Button className="cursor-pointer" onClick={() => handleClick(product)}>
+      <Button className="cursor-pointer" id={`product-${product.id}`} data-product={product.id} data-item="add-to-cart" onClick={() => handleClick(product)}>
         Añadir al carrito
       </Button>
     </div>
