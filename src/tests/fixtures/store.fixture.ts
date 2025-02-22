@@ -10,6 +10,7 @@ export const test = base.extend<StoreFixture>({
   storePage: async ({ page }, applyFixture) => {
       const storePage = new StorePage(page);
       await storePage.goto();
+      await page.waitForSelector('[data-item="product"] > *', { state: 'visible' });
       applyFixture(storePage);
   }
 });

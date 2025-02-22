@@ -1,4 +1,17 @@
+import { LIMIT_PER_PAGE } from "@/constants";
 import { expect, test } from "../../fixtures/store.fixture";
+
+
+test("Paginacion de productos", async ({ storePage }) => {
+  const products = await storePage.getProducts();
+  const productCount = await products.count(); // Obtiene el número total de productos
+  
+  console.log("Cantidad de productos encontrados:", productCount);
+
+  await expect(productCount).toBeLessThanOrEqual(LIMIT_PER_PAGE);
+  await expect(productCount).toBeGreaterThanOrEqual(0);
+});
+
 
 test("Compra un producto", async ({ storePage, page }) => {
   const products = await storePage.getProducts();
