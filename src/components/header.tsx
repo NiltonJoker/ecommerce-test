@@ -1,4 +1,4 @@
-import { PowerIcon } from "lucide-react";
+import { Rocket } from "lucide-react";
 import { Link } from "react-router";
 import Sidebar from "./sidebar";
 import ShoppingCart from "./cart/shopping-cart";
@@ -10,7 +10,7 @@ export default function Header() {
       <div className="container flex w-full items-center justify-between mx-auto">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
-            <PowerIcon className="h-6 w-6" />
+            <Rocket className="h-6 w-6" />
             <span className="text-lg font-bold hidden sm:block">Tienda</span>
           </Link>
         </div>

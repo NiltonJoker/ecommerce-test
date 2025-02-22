@@ -86,12 +86,16 @@ export default function CategoryFilter({
                 onValueChange={handleCategoryChange}
                 value={currentCategory}
               >
-                <SelectTrigger id="category">
+                <SelectTrigger id="category" className="capitalize">
                   <SelectValue placeholder="Selecciona la categoria" />
                 </SelectTrigger>
                 <SelectContent>
                   {categories.map((category) => (
-                    <SelectItem key={category} value={category}>
+                    <SelectItem
+                      key={category}
+                      value={category}
+                      className="capitalize"
+                    >
                       {category}
                     </SelectItem>
                   ))}
