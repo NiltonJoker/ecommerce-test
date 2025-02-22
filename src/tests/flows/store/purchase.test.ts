@@ -4,7 +4,7 @@ import { expect, test } from "../../fixtures/store.fixture";
 
 test("Paginacion de productos", async ({ storePage }) => {
   const products = await storePage.getProducts();
-  const productCount = await products.count(); // Obtiene el número total de productos
+  const productCount = await products.count();
   
   console.log("Cantidad de productos encontrados:", productCount);
 
@@ -174,6 +174,6 @@ test("Vaciar carrito", async ({ storePage }) => {
   await expect(cartButtonAfterClear).toBeVisible();
 
   const cartBadgeAfterClear = await storePage.getCartBadge();
-  // no debe existir en el dom
+
   await expect(cartBadgeAfterClear).not.toBeVisible();
 });

@@ -8,5 +8,4 @@ export const fetchProducts = async () => {
   return response.json();
 };
 
-// Crea una promesa estable
 export const productsPromise:Promise<ProductData> = fetchProducts();
